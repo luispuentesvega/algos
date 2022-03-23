@@ -1,0 +1,25 @@
+{
+  "name": "algos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eslintrc.js",
+  "scripts": {
+    "dev": "npx nodemon tsc",
+    "watch": "tsc --build tsconfig.json --watch",
+    "lint": "npx eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luispuentesvega/algos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luispuentesvega/algos/issues"
+  },
+  "homepage": "https://github.com/luispuentesvega/algos#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
