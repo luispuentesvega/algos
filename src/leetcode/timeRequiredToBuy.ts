@@ -4,7 +4,7 @@ function timeRequiredToBuy(tickets: number[], k: number): number {
   let loop = true;
   let timeTaken = 0;
   // loop the array til tickets[k] is zero
-  // track how many tickets have been sold == time spend
+  // track how many tickets have been sold == time spen d
   while (loop) {
     for (let i = 0; i < tickets.length; i++) {
       let remainingUserTickets = tickets[i];
