@@ -12,16 +12,14 @@ function firstUniqChar(s: string): number {
     charMap.set(c, num);
   }
 
-  let index = 0;
+  let firstSingleLetter = undefined;
   for (let [key, val] of charMap) {
-    console.log(key, val);
     if (val === 1) {
-      return index;
+      firstSingleLetter = key;
+      break;
     }
-    index++;
   }
-
-  return -1;
+  return s.indexOf(firstSingleLetter);
 };
 
 let s = "leetcode";
@@ -32,6 +30,9 @@ console.log('TEST CASE 1: ', firstUniqChar(s) === 2 ? 'PASSED' : 'FAILED');
 
 s = "aabb";
 console.log('TEST CASE 1: ', firstUniqChar(s) === -1 ? 'PASSED' : 'FAILED');
+
+s = "dddccdbba";
+console.log('TEST CASE 1: ', firstUniqChar(s) === 8 ? 'PASSED' : 'FAILED');
 
 /*
 Input: s = "leetcode"
