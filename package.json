@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx nodemon tsc",
     "watch": "tsc --build tsconfig.json --watch",
-    "lint": "npx eslint . --ext .ts"
+    "lint": "npx eslint . --ext .ts",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   },
   "homepage": "https://github.com/luispuentesvega/algos#readme",
   "devDependencies": {
+    "jest": "^28.1.2",
     "nodemon": "^2.0.15"
-  }
+  },
+  "dependencies": {}
 }
