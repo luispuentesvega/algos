@@ -24,6 +24,7 @@ function tournamentWinner(competitions, results) {
   //4. if 0, give the point to away team
 
   for (let i = 0; i < competitions.length; i++) {
+    // O(N)
     const [home, away] = competitions[i];
     const result = results[i];
 
