@@ -1,3 +1,4 @@
+// time : O(N log(N) + M log(M)) where n is the length of the array
 function smallestDifference(arrayOne, arrayTwo) {
   // R.E.A.C.T.O
   arrayOne.sort((a, b) => a - b);
