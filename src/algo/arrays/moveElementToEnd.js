@@ -1,6 +1,7 @@
+// O(n) time | O (1) space
 function moveElementToEnd(array, toMove) {
   // R.E.A.C.T.O
-  array.sort((a, b) => a - b);
+  array.sort((a, b) => a - b); // n log(n)
   let start = array.indexOf(toMove);
   let end = array.lastIndexOf(toMove);
 
@@ -8,6 +9,7 @@ function moveElementToEnd(array, toMove) {
 
   let posToMove = array.length - 1;
   while (start <= end) {
+    // O(start-end)
     if (array[posToMove] != toMove) {
       array[start] = array[posToMove];
       array[posToMove] = toMove;
