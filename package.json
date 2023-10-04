@@ -24,5 +24,7 @@
     "jest": "^28.1.2",
     "nodemon": "^2.0.15"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
 }
