@@ -7,7 +7,7 @@ solution #1:
 */
 
 /*
-Time Complexity: O(N)
+Time Complexity: O(n log n)
 Space Complexity: O(N)
 */
 
