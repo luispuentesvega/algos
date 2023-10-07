@@ -1,7 +1,7 @@
-const image = [[1, 1, 1], [1, 1, 0], [1, 0, 1]],
-  sr = 1,
-  sc = 1,
-  color = 2;
+const image = [[0, 0, 0], [0, 0, 0]],
+  sr = 0,
+  sc = 0,
+  color = 0;
 
 console.table(image);
 
@@ -18,7 +18,9 @@ function floodFill(
     Array.from({ length: image[0].length }, () => false)
   );
 
-  return DFS(image, sr, sc, color, visited);
+  const startingColor = image[sr][sc];
+
+  return DFS(image, sr, sc, color, startingColor, visited);
 }
 
 function DFS(
@@ -26,6 +28,7 @@ function DFS(
   row: number,
   col: number,
   color: number,
+  startingColor: number,
   visited: boolean[][]
 ) {
   const h = image.length;
@@ -37,7 +40,7 @@ function DFS(
     col < 0 ||
     col >= l ||
     visited[row][col] ||
-    image[col][row] === 0
+    image[row][col] !== startingColor
   ) {
     return;
   }
@@ -45,10 +48,10 @@ function DFS(
   visited[row][col] = true;
   image[row][col] = color;
 
-  DFS(image, row + 1, col, color, visited); //go down
-  DFS(image, row - 1, col, color, visited); // go up
-  DFS(image, row, col + 1, color, visited); // go right
-  DFS(image, row, col - 1, color, visited); // go left
+  DFS(image, row + 1, col, color, startingColor, visited); //go down
+  DFS(image, row - 1, col, color, startingColor, visited); // go up
+  DFS(image, row, col + 1, color, startingColor, visited); // go right
+  DFS(image, row, col - 1, color, startingColor, visited); // go left
 
   return image;
 }
