@@ -16,20 +16,26 @@ tree.left.left = new TreeNode(4);
 
 tree.right = new TreeNode(3);
 
+// console.log(tree);
 function diameterOfBinaryTree(root: TreeNode | null) {
-  const res = [0];
-  function dfs(root: TreeNode | null) {
-    if (root === null) return -1;
-    let left = dfs(root.left);
-    let right = dfs(root.right);
-    res[0] = Math.max(res[0], 2 + left + right);
+  let diameter = 0;
+  function maxDepth(root: TreeNode | null) {
+    if (root === null) return 0;
 
-    return 1 + Math.max(left, right);
+    let left = maxDepth(root.left); //2 -> 4
+    let right = maxDepth(root.right); // 5
+
+    if (left + right > diameter) {
+      diameter = left + right;
+    }
+
+    const max = Math.max(left, right) + 1;
+    return max;
   }
 
-  dfs(root);
+  maxDepth(root);
 
-  return res[0];
+  return diameter;
 }
 
 console.log(diameterOfBinaryTree(tree));
